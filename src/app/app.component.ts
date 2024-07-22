@@ -1,17 +1,26 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {NgClass, NgStyle, NgOptimizedImage} from "@angular/common";
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {
+  NgClass,
+  NgStyle,
+  NgOptimizedImage,
+  NgIf,
+  NgForOf,
+  NgSwitch,
+  NgSwitchCase,
+  NgSwitchDefault
+} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgOptimizedImage, FormsModule, NgClass, NgStyle],
+  imports: [RouterOutlet, NgOptimizedImage, FormsModule, NgClass, NgStyle, NgIf, NgForOf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title: string = 'hello-world';
+  helloWorldTutorial: string = 'hello-world';
   myButton: string = 'My Button';
   counter: number = 0;
 
@@ -28,11 +37,11 @@ export class AppComponent {
   redText: string = 'abcd';
 
   //data binding
-  incrementCounter(){
+  incrementCounter() {
     this.counter++;
   }
 
-  decrementCounter(){
+  decrementCounter() {
     this.counter--
   }
 
@@ -44,5 +53,27 @@ export class AppComponent {
 
   //ngStyle
   selectedColor: string = 'red';
+
+  //Tutorial Structure Directives
+  directivesTitle: string = 'Structure Directives'
+
+  isLoggedIn: boolean = true;
+  check: boolean = true;
+  username: string = 'admin';
+
+  names: string[] = ['admin', 'user', 'visitor'];
+  grade: string = 'D';
+
+  //Control flow
+  controlFlowTitle: string = 'Control Flow';
+  a: number = 1;
+  b: number = 2;
+  c: number = 3;
+
+  items = [
+    {id: 1, name: 'item1'},
+    {id: 2, name: 'item2'},
+    {id: 3, name: 'item3'},
+  ];
 }
 
