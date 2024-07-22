@@ -64,8 +64,30 @@ Hello, {{ helloWorldTutorial }} 1
 </div>
 
 <div>
-  <!--for each loop-->
-  @for (item of items; track item.id; let i = $index){
-    <p>index: {{i}} = {{item.name}}</p>
+  <!--for each loop with conditions boolean {$first $last $even $odd} Numbers {$index $count}-->
+  @for (item of items; track item.id; let i = $index; let totalItems = $count; let checkLast = $last;) {
+    <p>Index: {{ i }} = {{ item.name }}</p>
+    @if (checkLast) {
+      <p>Total amount of items: {{ totalItems }}</p>
+    }
   }
 </div>
+
+<!--switch-->
+<div>
+  @switch (grade){
+    @case ('A'){
+      <p>Excellent</p>
+    }
+    @case ('B'){
+      <p>Good</p>
+    }
+    @case ('C'){
+      <p>Bad</p>
+    }
+    @default {
+      <p>Unknown</p>
+    }
+  }
+</div>
+

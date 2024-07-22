@@ -62,7 +62,7 @@ export class AppComponent {
   username: string = 'admin';
 
   names: string[] = ['admin', 'user', 'visitor'];
-  grade: string = 'D';
+  grade: string = 'B';
 
   //Control flow
   controlFlowTitle: string = 'Control Flow';
